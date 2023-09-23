@@ -22,3 +22,10 @@ footer {
     background-color: rgb(216, 228, 204);
     padding: 20px;
 }
+
+ul {
+    text-align: left;
+    font-family: 'Courier new';
+    font-style: oblique;
+    font-weight: bold;
+}

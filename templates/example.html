@@ -29,6 +29,13 @@
             45**8 = {{45**8}}
         <br>
         <br>
+        <ul>
+            {% for fruit in fruits%}
+            <li>{{ fruit.name }}: {{ fruit.price }} &#x20bd;</li>
+            {% endfor %}
+        </ul>
+        <br>
+        <br>
     </main>
 
     <footer>
