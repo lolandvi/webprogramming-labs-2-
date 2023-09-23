@@ -29,3 +29,10 @@ ul {
     font-style: oblique;
     font-weight: bold;
 }
+
+ol {
+    text-align: left;
+    font-family: 'Courier new';
+    font-style: oblique;
+    font-weight: bold;
+}

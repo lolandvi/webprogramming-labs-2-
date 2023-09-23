@@ -34,6 +34,11 @@
             <li>{{ fruit.name }}: {{ fruit.price }} &#x20bd;</li>
             {% endfor %}
         </ul>
+        <ol>
+            {% for book in books%}
+            <li>{{ book.name }}, {{ book.author }}, {{ book.theme }}, {{ book.page }}</li>
+            {% endfor %}
+        </ol>
         <br>
         <br>
     </main>
