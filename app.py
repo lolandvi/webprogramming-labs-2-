@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, url_for, render_template
 
 app = Flask(__name__)
 
@@ -191,4 +191,12 @@ def teacher():
     </body>
 </html>    
 '''
+
+@app.route('/lab2/example')
+def example():
+    name = 'Ветрова Лолита, Клопенкова Виктория'
+    number = '2'
+    group = 'ФБИ-11'
+    curs = '3'
+    return render_template('example.html', name=name, number=number, group=group, curs=curs)
 
