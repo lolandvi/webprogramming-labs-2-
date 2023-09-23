@@ -1,0 +1,24 @@
+body {
+    margin: 20px;
+    background-color: rgb(239, 195, 202);
+}
+
+main {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 20px;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(216, 228, 204);
+    padding: 20px;
+}
