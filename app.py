@@ -231,3 +231,7 @@ def example():
 def lab2():
     return render_template('lab2.html')
 
+@app.route('/lab2/cats')
+def cats():
+    return render_template('cats.html')
+

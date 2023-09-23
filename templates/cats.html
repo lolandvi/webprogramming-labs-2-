@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 2{% endblock %}
+
+{% block main %}
+    <h1>Картинки с котятами</h1>
+    <div>Тема самостоятельного задания - котики.</div>
+    <br>
+    <img src="{{ url_for('static', filename='cat1.jpg')}}">
+    <div class="cat">Котик с деньгами. Много деняк.</div>
+    <img src="{{ url_for('static', filename='cat2.jpg')}}">
+    <div class="cat">Котик в очках. Улыбается.</div>
+    <img src="{{ url_for('static', filename='cat3.jpg')}}">
+    <div class="cat">Котик в зуме. Шокирован.</div>
+    <img src="{{ url_for('static', filename='cat4.jpg')}}">
+    <div class="cat">Котик проснулся. Сонный.</div>
+    <img src="{{ url_for('static', filename='cat5.jpg')}}">
+    <div class="cat">Котик просто милый. Мило.</div>
+    <img src="{{ url_for('static', filename='cat6.jpg')}}">
+    <div class="cat">Котик ну вы поняли. Вот так вот...</div>
+    <br>
+    <br>
+{% endblock %}
