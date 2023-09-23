@@ -227,3 +227,7 @@ def example():
         books=books
     )
 
+@app.route('/lab2/')
+def lab2():
+    return render_template('lab2.html')
+
