@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let sum = 0
+        function if16() {
+            let a = document.getElementById('a');
+            let aa = parseInt(a.value);
+            let b = document.getElementById('b');
+            let bb = parseInt(b.value);
+            let c = document.getElementById('c');
+            let cc = parseInt(c.value);
+            if (aa < bb && bb < cc) {
+                aa=aa*2;
+                bb=bb*2;
+                cc=cc*2;  
+            }
+            else { 
+                aa= aa*-1;
+                bb= bb*-1;
+                cc= cc*-1; 
+            }
+            
+            alert(aa + ' ' + bb + ' ' + cc);
+        }
+
+        function for1() {
+            let n = document.getElementById('a');
+            let nn = parseInt(a.value);
+            let k = document.getElementById('b');
+            let kk = parseInt(b.value);
+            if (nn > 0) {
+                for (let i = 0; i < kk; i++) {
+                    alert(nn)
+                }
+            }
+        }
+
+        function for36() {
+            let n = document.getElementById('a');
+            let nn = parseInt(a.value);
+            let k = document.getElementById('b');
+            let kk = parseInt(b.value);
+            if (nn > 0) {
+                for (let i = 1; i < nn+1; i++) {
+                    sum += i ** kk
+                }
+            }
+            alert(sum)
+            sum=0
+        }
+    </script>
+</head>
+<body>
+    <input type="number" value="2" id="a" placeholder="Введите вещественное число A"><br>
+    <input type="number" value="3" id="b" placeholder="Введите вещественное число B"><br>
+    <input type="number" value="5" id="c" placeholder="Введите вещественное число C"><br>
+    <div class="message" onclick="if16()">if16</div>
+    <div class="message" onclick="for1()">for1</div>
+    <div class="message" onclick="for36()">for36</div>
+</body>
+</html>
