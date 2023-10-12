@@ -21,13 +21,17 @@
         <label>Ваше имя:</label>
         <div>
             <input type="text" placeholder="Как вас зовут?" name="user" value="{{ user or ''}}">
+            {% if user == '' %}
             <span class="error">{{errors.user}}</span>
+            {% endif %}
         </div>
 
         <label>Ваш возраст:</label>
         <div>
             <input type="number" placeholder="Сколько вам лет?" name="age" value="{{ age or ''}}">
+            {% if age == '' %}
             <span class="error">{{errors.age}}</span>
+            {% endif %}
         </div>
 
         <label>Ваш пол:</label>
