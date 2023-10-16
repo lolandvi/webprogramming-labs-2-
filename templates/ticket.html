@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+    {% if user and age1 > 18 and age1 < 120 and from1 and where and datetime %}
+        <h1>Успешно!</h1>
+        <div>Информация по вашему билету:</div>
+        <br>
+        <div class="ticket">Пассажир: {{ user }}</div>
+        <div class="ticket">Тип билета: {{ 'Детский' if type == 'child' else 'Взрослый' }}</div>
+        <div class="ticket">Место: {{ place_output }}</div>
+        <div class="ticket">Багаж: {{ 'Есть' if type == 'yes' else 'Нет' }}</div>
+        <div class="ticket">Возраст пассажира: {{ age }}</div>
+        <div class="ticket">Пункт отправления: {{ from1 }}</div>
+        <div class="ticket">Пункт назначения: {{ where }}</div>
+        <div class="ticket">Дата отправления: {{ datetime }}</div>
+        <img src="{{ url_for('static', filename='train.jpg')}}">
+        <br>
+        <div>
+            <a href="/lab3/ticket?age=18">Заполнить заново</a>
+        </div>
+    {% else %}
+    <h1>Заказ ЖД билета</h1>
+
+    <form>
+        <div>ФИО пассажира:</div>
+        <input type="text" placeholder="Введите ФИО" name="user" value="{{ user or ''}}">
+        {% if user == '' %}
+            <span class="error">{{errors.user}}</span>
+        {% endif %}
+        <div>Тип билета:</div>
+        <div>
+            <select name="type">
+                <option value="child" {{ type == 'child' and 'selected' }}>Детский</option>
+                <option value="adult" {{ type == 'adult' and 'selected' }}>Взрослый</option>
+            </select>
+        </div>
+        <div>Место:</div>
+        <div>
+            <select name="place">
+                <option value="1" {{ place == '1' and 'selected' }}>Нижняя полка</option>
+                <option value="2" {{ place == '2' and 'selected' }}>Верхняя полка</option>
+                <option value="3" {{ place == '3' and 'selected' }}>Нижняя боковая полка</option>
+                <option value="4" {{ place == '4' and 'selected' }}>Верхняя боковая полка</option>
+            </select>
+        </div>
+        <div>Багаж:</div>
+        <label>
+            <input type="radio" value="yes" name="baggage" checked>Есть
+        </label>
+        <label>
+            <input type="radio" value="no" name="baggage">Нет
+        </label>
+        <div>Ваш возраст:</div>
+        <div>
+            <input type="number" placeholder="Введите ваш возраст" name="age" value="{{ age or '18'}}">
+            {% if (age1 < 18) or (age1 > 120) %}
+            <span class="error">{{errors.age1}}</span>
+            {% endif %}
+            {% if age == '' %}
+            <span class="error">{{errors.age}}</span>
+            {% endif %}
+        </div>
+        <div>Пункт выезда:</div>
+        <input type="text" placeholder="Введите пункт выезда" name="from1" value="{{ from or ''}}">
+        {% if from1 == '' %}
+            <span class="error">{{errors.from1}}</span>
+        {% endif %}
+        <div>Пункт назначения:</div>
+        <input type="text" placeholder="Введите пункт назначения" name="where" value="{{ where or ''}}">
+        {% if where == '' %}
+            <span class="error">{{errors.where}}</span>
+        {% endif %}
+        <div>Дата отправления:</div>
+        <input type="datetime-local" name="datetime">
+        {% if datetime == '' %}
+            <span class="error">{{errors.datetime}}</span>
+        {% endif %}
+        <div>
+            <button type="submit">Заказать</button>
+        </div>
+    </form>
+    {% endif %}
+{% endblock %}

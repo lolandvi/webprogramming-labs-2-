@@ -73,3 +73,8 @@ span {
     padding: 7px;
     border-radius: 10px;
 }
+
+.ticket {
+    margin-bottom: 7px;
+    font-style: italic;
+}

@@ -53,3 +53,50 @@ def pay():
 @lab3.route('/lab3/success')
 def success():
     return render_template('success.html')
+
+
+@lab3.route('/lab3/ticket')
+def ticket():
+    errors = {}
+    user = request.args.get('user')
+    if user == '':
+        errors['user'] = 'Заполните поле!'
+    age = request.args.get('age')
+    if age == '':
+        errors['age'] = 'Заполните поле!'
+        age = '18'
+    age1 = int(age)
+    if (age1 < 18) or (age1 > 120):
+        errors['age1'] = 'Ваш возраст не подходит'
+    from1 = request.args.get('from1')
+    if from1 == '':
+        errors['from1'] = 'Заполните поле!'
+    where = request.args.get('where')
+    if where == '':
+        errors['where'] = 'Заполните поле!'
+    datetime = request.args.get('datetime')
+    if datetime == '':
+        errors['datetime'] = 'Заполните поле!'
+    place = request.args.get('place')
+    if place == '1':
+        place_output = 'Нижняя полка'
+    elif place == '2':
+        place_output = 'Верхняя полка'
+    elif place == '3':
+        place_output = 'Боковая нижняя полка'
+    else:
+        place_output = 'Боковая верхняя полка'
+    return render_template(
+        'ticket.html',
+        user=user,
+        from1=from1,
+        where=where,
+        datetime=datetime,
+        age=age,
+        age1=age1,
+        place_output=place_output,
+        place=place,
+        errors = errors
+    )
+
+
