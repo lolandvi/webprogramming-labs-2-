@@ -78,3 +78,11 @@ span {
     margin-bottom: 7px;
     font-style: italic;
 }
+
+.temperature {
+    background-color: rgb(199, 187, 187);
+    border-radius: 10px;
+    max-width: 500px;
+    padding: 7px;
+    text-align: center;
+}
