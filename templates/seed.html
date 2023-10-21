@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 4{% endblock %}
+
+{% block main %}
+    {% if type_seed and weight %}
+    <h1>Заказ успешно сформирован.</h1>
+    <div>Вы заказали: {{ type_seed }}</div>
+    <div>Вес: {{ weight }}</div>
+    <div>Сумма к оплате: {{ summ }} руб.</div>
+    {% if weight > 50 or weight > 500 %}
+    <div class="temperature">{{ output }}</div>
+    {% endif %}
+    <a href="/lab4/seed?weight=">Сделать новый заказ</a>
+    {% else %}
+    <h1>Заказ зерна</h1>
+    <form>
+        <div>Зерно</div>
+        <div>
+            <select name="type_seed">
+                <option value="1" {{ type_seed == '1' and 'selected' }}>Ячмень</option>
+                <option value="2" {{ type_seed == '2' and 'selected' }}>Овёс</option>
+                <option value="3" {{ type_seed == '3' and 'selected' }}>Пшеница</option>
+                <option value="4" {{ type_seed == '4' and 'selected' }}>Рожь</option>
+            </select>
+        </div>
+        <div>Вес</div>
+        <input type="number" id="weight" name="weight" value="{{ weight or ''}}">
+        {% if weight == '' or weight <= 0 %}
+            <span>{{ output }}</span>
+        {% endif %}
+        <br> <br>
+        <button type="submit">Оформить заказ</button>
+    </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 2{% endblock %}
+
+{% block main %}
+    <form>
+        <label>Первое число</label>
+        <input type="number" name="one" step="any" id="one" value="{{ one or '' }}">
+        <label>Второе число</label>
+        <input type="number" name="two" id="two" value="{{ two or '' }}">
+        <label>Третье число</label>
+        <input type="number" name="three" id="three" value="{{ three or '' }}">
+        <label>Четвертое число</label>
+        <input type="number" name="four" id="four" value="{{ four or '' }}">
+        <button type="submit">Посчитать</button>
+    </form>
+    <div>
+        {{ result }}
+    </div>
+{% endblock %}

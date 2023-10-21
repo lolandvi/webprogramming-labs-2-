@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 2{% endblock %}
+
+{% block main %}
+    <form>
+        <label>Вещественное число</label>
+        <input type="number" step="any" name="exist" id="exist" value="{{ exist or '' }}">
+        <label>Целое число</label>
+        <input type="number" name="full" id="full" value="{{ full or '' }}">
+        <button type="submit">Посчитать</button>
+    </form>
+    <div>
+        {{ approx }}
+    </div>
+    <a href="ifff?one=1&two=1&three=3&four=1">Следующее задание</a>
+{% endblock %}
