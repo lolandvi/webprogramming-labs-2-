@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 5{% endblock %}
+
+{% block main %}
+    <div>
+        <h1>Статьи {{ username }}</h1>
+        {% for paragraph in articlebody %}
+        <p>{{ paragraph[0] }}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
