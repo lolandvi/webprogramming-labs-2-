@@ -4,9 +4,9 @@
 
 {% block main %}
     <div>
-        <h1>{{ article_title }}</h1>
-        {% for paragraph in article_text %}
-        <p>{{ paragraph }}</p>
-        {% endfor %}
+        <h1>{{ articles.title }}</h1>
+        {{ articles.article_text }}
     </div>
+
+    <a href="/lab6/head">На главную</a>
 {% endblock %}
