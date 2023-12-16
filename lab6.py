@@ -113,7 +113,7 @@ def create():
             errors.append("Заполните все поля") 
             return render_template('create_note.html', errors=errors) 
  
-        new_article = articles(title=title, article_text=text_article, user_id=current_user.id, is_public=is_public) # добавляем новое поле для публичности статьи
+        new_article = articles(title=title, article_text=text_article, user_id=current_user.id, is_public=is_public) 
         db.session.add(new_article) 
         db.session.commit() 
  

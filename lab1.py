@@ -33,6 +33,7 @@ def menu():
             <li><a href='/def3?exist=1&full=2'>Защита лабораторная работа</a></li>
             <li><a href='/lab5'>Пятая лабораторная работа</a></li>
             <li><a href='/lab6/head'>Шестая лабораторная работа</a></li>
+            <li><a href='/lab7'>Седьмая лабораторная работа</a></li>
             </ol>
         </main>
         <footer>
