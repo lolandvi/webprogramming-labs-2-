@@ -45,7 +45,7 @@ def calculate_price(params):
     return price
 
 def pay(params):
-    card_num = params['card_num']
+    card_num = params['cardNumber']
     if len(card_num) != 16 or not card_num.isdigit():
         return {'result': None, 'error': 'Неверный номер карты'}
     

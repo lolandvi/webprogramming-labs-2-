@@ -3,7 +3,7 @@
 {% block lab %}Лабораторная работа 7{% endblock %}
 
 {% block script %}
-<script src="{{ url_for('static', filename='/lab7/drink.js') }}"></script>
+<script src="{{ url_for('static', filename='lab7/drink.js') }}"></script>
 {% endblock %}
 
 {% block main %}
@@ -51,5 +51,7 @@
         <div>
             <button onclick="pay()">Оплатить</button>
         </div>
+
+        <div id="result"></div>
     </div>
 {% endblock %}
