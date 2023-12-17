@@ -7,6 +7,7 @@ from tata import deff3
 from lab5 import lab5
 from lab6 import lab6
 from lab7 import lab7
+from lab8 import lab8
 from db import db
 from flask_sqlalchemy import SQLAlchemy
 from db.models import users
@@ -23,6 +24,7 @@ app.register_blueprint(deff3)
 app.register_blueprint(lab5)
 app.register_blueprint(lab6)
 app.register_blueprint(lab7)
+app.register_blueprint(lab8)
 
 user_db = 'admin_knowledge_base_orm'
 host_ip = '127.0.0.1'
