@@ -9,6 +9,9 @@ function fillCourseList() {
         for(let i = 0; i<courses.length; i++) {
             tr = document.createElement('tr');
 
+            let tdData = document.createElement('td');
+            tdData.innerHTML = courses[i].data;
+
             let tdName = document.createElement('td');
             tdName.innerHTML = courses[i].name;
 
@@ -34,6 +37,7 @@ function fillCourseList() {
             tdActions.append(editButton);
             tdActions.append(delButton);
 
+            tr.append(tdData)
             tr.append(tdName)
             tr.append(tdVideos)
             tr.append(tdPrice)
@@ -48,7 +52,7 @@ function deleteCourse(num) {
     if(! confirm('Вы точно хотите удалить курс?'))
         return;
 
-    fetch('/lab8/api/courses/${num}', {method: 'DELETE'})
+    fetch(`/lab8/api/courses/${num}`, {method: 'DELETE'})
     .then(function() {
         fillCourseList();
     })
@@ -68,6 +72,7 @@ function cancel() {
 
 function addCourse() {
     document.getElementById('num').value = '';
+    document.getElementById('data').value = '';
     document.getElementById('name').value = '';
     document.getElementById('videos').value = '';
     document.getElementById('price').value = '';
@@ -78,6 +83,7 @@ function addCourse() {
 function sendCourse() {
     const num = document.getElementById('num').value;
     const course = {
+        data: document.getElementById('data').value,
         name: document.getElementById('name').value,
         videos: document.getElementById('videos').value,
         price: document.getElementById('price').value
@@ -98,6 +104,7 @@ function sendCourse() {
 
 function editCourse(num, course) {
     document.getElementById('num').value = num;
+    document.getElementById('data').value = course.data;
     document.getElementById('name').value = course.name;
     document.getElementById('videos').value = course.videos;
     document.getElementById('price').value = course.price;
